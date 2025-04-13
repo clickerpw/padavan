@@ -16,8 +16,8 @@ jobs:
 
     - name: Get variables
       run: |
-        sed -i 's|\r$||g' variables kn-4g3.config
-        . <(cat variables kn-4g3.config)
+        sed -i 's|\r$||g' variables mi-r3gv2.config
+        . <(cat variables mi-r3gv2.config)
         PADAVAN_THEMES="${PADAVAN_THEMES[*]}"
         for v in "${!PADAVAN_@}" "${!CONFIG_@}"; do
           echo "$v=${!v}" >> $GITHUB_ENV
@@ -47,7 +47,7 @@ jobs:
 
     - name: Build firmware
       run: |
-        cp kn-4g3.config padavan-ng/trunk/.config
+        cp mi-r3gv2.config padavan-ng/trunk/.config
         pushd padavan-ng/trunk
         ./clear_tree.sh
         ./build_firmware.sh
