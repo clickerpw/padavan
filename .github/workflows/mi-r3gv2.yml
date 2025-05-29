@@ -48,6 +48,7 @@ jobs:
     - name: Build firmware
       run: |
         cp mi-r3gv2.config padavan-ng/trunk/.config
+        cp -f kernel-3.4.x_patch.config padavan-ng/trunk/configs/boards/XIAOMI/MI-R3Gv2/kernel-3.4.x.config
         pushd padavan-ng/trunk
         ./clear_tree.sh
         ./build_firmware.sh
