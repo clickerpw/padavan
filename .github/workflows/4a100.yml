@@ -16,8 +16,8 @@ jobs:
 
     - name: Get variables
       run: |
-        sed -i 's|\r$||g' variables build.config
-        . <(cat variables build.config)
+        sed -i 's|\r$||g' variables mi-4a_100m.config
+        . <(cat variables mi-4a_100m.config)
         PADAVAN_THEMES="${PADAVAN_THEMES[*]}"
         for v in "${!PADAVAN_@}" "${!CONFIG_@}"; do
           echo "$v=${!v}" >> $GITHUB_ENV
